@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Agrima Bahadur</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container-fluid p-3 bg-light text-white text-center">
+    <div class="container">
+      <header>
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="index.html"
+            class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            <img src="images/logo.png" height="60" style="outline: none;" />
+          </a>
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+            <li>
+              <a href="#" class="nav-link social-media-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                  class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link social-media-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                  class="bi bi-instagram" viewBox="0 0 16 16">
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link social-media-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                  class="bi bi-whatsapp" viewBox="0 0 16 16">
+                  <path
+                    d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                </svg>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </header>
+    </div>
+
+  </div>
+
+  <nav class="py-2 nav-bg">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <li class="nav-item me-4 ms-0"><a href="#" class="nav-link link-light px-2 active" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item me-4"><a href="#" class="nav-link link-light px-2">Our Story</a></li>
+        <li class="nav-item me-4"><a href="#" class="nav-link link-light px-2">Capabilities</a></li>
+        <li class="nav-item me-4"><a href="#" class="nav-link link-light px-2">Design Studio</a></li>
+        <li class="nav-item me-4"><a href="#" class="nav-link link-light px-2">FAQ</a></li>
+        <li class="nav-item me-0"><a href="#" class="nav-link link-light px-2">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid m-0 p-0">
+
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="images/banner-1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="images/banner-2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="images/banner-3.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="images/banner-4.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  </div>
+
+  <div class="container-fluid m-0 p-0 pt-8 pb-8">
+    <div class="container text-center">
+      <h6 class="text-uppercase text-muted">How do we work</h6>
+      <div class="mt-4 section-head">Make Better Decisions With Agrima Bahadur</div>
+      <div class="mt-4 col-lg-6 ms-auto me-auto section-desc text-muted">Lorem Ipsum. Progravida nibh vel velit auctor
+        alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id euis.
+      </div>
+      <div class="row mt-5">
+        <!--start of first column-->
+        <div class="col-lg-6 col-sm-12 p-4 box-section">
+          <div class="row">
+            <div class="col-lg-3 col-sm-12 box-icons">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                class="bi bi-people-fill" viewBox="0 0 16 16">
+                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                <path fill-rule="evenodd"
+                  d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+              </svg>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+              <h4 class="box-heading text-start">Who we are?</h4>
+              <p class="text-start box-desc">Established in 2022, being a dependable business enterprise with worldwide
+                standards having the absolute best exceptional in the fashion apparel world...</p>
+              <div class="readMore text-start"><a href="#">read more</a></div>
+            </div>
+          </div>
+        </div>
+        <!--end of first column-->
+
+        <!--start of 2nd column-->
+        <div class="col-lg-6 col-sm-12 p-4 box-section">
+          <div class="row">
+            <div class="col-lg-3 col-sm-12 box-icons">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+                <path
+                  d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z" />
+              </svg>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+              <h4 class="box-heading text-start">What we do?</h4>
+              <p class="text-start box-desc">At Agrima Bahadur, professionals are here to serve you for your different
+                garment demands with the combination of skilled professional craftsmen, pattern makers... </p>
+              <div class="readMore text-start"><a href="#">read more</a></div>
+            </div>
+          </div>
+        </div>
+        <!--end of 2nd column-->
+
+        <!--start of 3rd column-->
+        <div class="col-lg-6 col-sm-12 p-4 box-section">
+          <div class="row">
+            <div class="col-lg-3 col-sm-12 box-icons">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-bullseye"
+                viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
+                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
+                <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+              </svg>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+              <h4 class="box-heading text-start">Our Vision</h4>
+              <p class="text-start box-desc">An aware apparel producer thriving on a way of life of commitment,
+                innovation, consistency and sustainability via craftsmanship, workers empowerment and growth.</p>
+              <div class="readMore text-start"><a href="#">read more</a></div>
+            </div>
+          </div>
+        </div>
+        <!--end of 3rd column-->
+
+        <!--start of 4th column-->
+        <div class="col-lg-6 col-sm-12 p-4 box-section">
+          <div class="row">
+            <div class="col-lg-3 col-sm-12 box-icons">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z" />
+              </svg>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+              <h4 class="box-heading text-start">Our Mission</h4>
+              <p class="text-start box-desc">To enable people to attain their best possible and consciously grow and
+                evolve in life. To ensure satisfactory delivery and excellence to explore spontaneous</p>
+              <div class="readMore text-start"><a href="#">read more</a></div>
+            </div>
+          </div>
+        </div>
+        <!--end of 4th column-->
+      </div>
+    </div>
+  </div>
+
+  <!--Start of testimonial container-->
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 testi-bg">
+
+      </div>
+      <div class="col-lg-8 p-5 testi-content text-center">
+        <div class="section-head mb-4">Our Happy Clients</div>
+        <div class="section-subHead">What our client say about us</div>
+
+        <div id="carouselTesti" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+              <div class="testiCircle rounded-circle m-auto mt-4">
+                <img src="images/vikas.jpg" width="116" />
+              </div>
+              <div class="testimonial col-6 ms-auto me-auto mt-4">Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived
+                not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+              </div>
+              <div class="testiName mt-3">Mr. Vikas Gupta</div>
+              <div class="testiLocation">Delhi</div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="testiCircle rounded-circle m-auto mt-4">
+                <img src="images/harsh.jpg" width="116" />
+              </div>
+              <div class="testimonial col-6 ms-auto me-auto mt-4">Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived
+                not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+              </div>
+              <div class="testiName mt-3">Mr. Harsh Chauhan</div>
+              <div class="testiLocation">Noida</div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="testiCircle rounded-circle m-auto mt-4">
+                <img src="images/smiriti.jpg" width="116" />
+              </div>
+              <div class="testimonial col-6 ms-auto me-auto mt-4">Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived
+                not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+              </div>
+              <div class="testiName mt-3">Mr. Smriti Irani</div>
+              <div class="testiLocation">Mumbai</div>
+            </div>
+
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselTesti" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselTesti" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--End of testimonial container-->
+
+  <!--start of capabilities container-->
+
+  <div class="container-fluid pt-8 pb-8 capabilities">
+    <div class="container text-center">
+      <div class="section-head">Our Capabilities</div>
+      <div class="mt-4 col-lg-6 ms-auto me-auto section-desc text-muted">
+        Lorem Ipsum. Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit
+        consequat ipsum, nec sagittis sem nibh id euis.
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-6 col-sm-12 box-section p-4">
+          <div class="box-icons mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-palette2"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 .5A.5.5 0 0 1 .5 0h5a.5.5 0 0 1 .5.5v5.277l4.147-4.131a.5.5 0 0 1 .707 0l3.535 3.536a.5.5 0 0 1 0 .708L10.261 10H15.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5H3a2.99 2.99 0 0 1-2.121-.879A2.99 2.99 0 0 1 0 13.044m6-.21 7.328-7.3-2.829-2.828L6 7.188v5.647zM4.5 13a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zM15 15v-4H9.258l-4.015 4H15zM0 .5v12.495V.5z" />
+              <path d="M0 12.995V13a3.07 3.07 0 0 0 0-.005z" />
+            </svg>
+          </div>
+          <h4 class="box-heading">Garmenting</h4>
+          <p class="box-desc">
+            Real-time quality control and specific execution of QA procedures, in conjunction with lean manufacturing
+            initiatives, assist us to persistently create top-quality exceptional products.
+          </p>
+        </div>
+        <div class="col-lg-6 col-sm-12 box-section p-4">
+          <div class="box-icons mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-pencil-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+            </svg>
+          </div>
+          <h4 class="box-heading">Design</h4>
+          <p class="box-desc">
+            To furnish you by growing Indian customized put-on design outfits that is your very own in its real
+            experience - from a choice of fabric to the choice of colours, from small print of craftsmanship to desire
+            of embellishments, we let you figure out it all.
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--End of capabilities container-->
+
+  <!--Start of footer container-->
+  <div class="container-fluid p-6 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-sm-12">
+          <div class="footer-logo">
+            <img src="images/white-logo.png" />
+          </div>
+          <div class="socialMedia mt-3">
+            <ul class="nav col-12 col-lg-auto my-2 my-md-0 text-small">
+              <li>
+                <a href="#" class="nav-link social-media-footer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link social-media-footer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link social-media-footer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-whatsapp" viewBox="0 0 16 16">
+                    <path
+                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-12 address">
+          <h4>Our Address</h4>
+          <address class="mt-4">
+            <div class="row">
+              <div class="col-2 col-sm-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                </svg>
+              </div>
+              <div class="col-10 col-sm-11"> ATS Dolce, Greater Noida,
+                Uttar Pradesh, India.
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-2 col-sm-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                </svg>
+              </div>
+              <div class="col-10 col-sm-11">+91-8377806292
+              </div>
+            </div>
+
+
+
+         
+          </address>
+        </div>
+        <div class="col-lg-3 col-sm-12 important-links">
+            <h4>Important Links</h4>
+            <ul>
+              <li><a href="#">Capabilities</a></li>
+              <li><a href="#">Design Studio</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-3 col-sm-12 journey">
+          <h4>Start your Journey</h4>
+          <button type="button" class="btn btn-danger mt-4">Enquire Now!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End Start of footer container-->
+  <div class="container-fluid bg-light copyright text-center m-0 p-3">
+      <span>Copyright 2022 by Agrima Bahadur. All Rights Reserved.</span>
+  </div>
+
+</body>
+
+</html>

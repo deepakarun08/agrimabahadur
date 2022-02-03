@@ -1,0 +1,241 @@
+@font-face {
+  font-family: nato sans;
+  src: url(./Noto_Sans/NotoSans-Regular.ttf), url(./Noto_Sans/NotoSans-Italic.ttf), url(./Noto_Sans/NotoSans-Bold.ttf), url(./Noto_Sans/NotoSans-BoldItalic.ttf);
+}
+
+body {
+  font-family: nato sans;
+}
+
+.nav-bg {
+  background-color: #FA815B;
+}
+
+.social-media-header {
+  color: #FA815B;
+}
+
+.social-media-header:hover {
+  color: #333333;
+}
+
+.social-media-footer {
+  color: #FFFFFF;
+}
+
+.social-media-footer:hover {
+  color: #FA815B;
+}
+
+.section-head {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.section-subHead {
+  font-size: 18px;
+}
+
+.section-desc {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.box-section:hover {
+  background-color: #FA815B;
+}
+
+.box-section:hover .box-icons svg {
+  color: #FFFFFF;
+}
+
+.box-section:hover .box-heading {
+  color: #FFFFFF;
+}
+
+.box-section:hover .box-desc {
+  color: #FFFFFF;
+}
+
+.box-section:hover .readMore a {
+  color: #FFFFFF;
+}
+
+.box-section .box-heading {
+  font-weight: bold;
+  font-size: 24px;
+  color: #FA815B;
+}
+
+.box-section .box-desc {
+  color: black;
+}
+
+.box-section .box-icons svg {
+  color: #FA815B;
+}
+
+.box-section .readMore {
+  font-size: 14px;
+}
+
+.box-section .readMore a {
+  color: #FA815B;
+  text-decoration: underline;
+}
+
+.box-section .readMore a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.testi-bg {
+  background: url("../images/testimonial.jpg") center bottom no-repeat;
+}
+
+.testi-content {
+  background-color: #FAB89D;
+  background-image: url("../images/quote.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
+.testiCircle {
+  height: 120px;
+  width: 120px;
+  background-color: #333333;
+  border: 2px solid white;
+}
+
+.testiCircle img {
+  border-radius: 100px;
+}
+
+.testimonial {
+  font-size: 16px;
+  line-height: 24px;
+  color: black;
+  min-height: 120px;
+}
+
+.testiName {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.testiLocation {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.capabilities {
+  background-color: #F3F3F3;
+}
+
+.footer-logo img {
+  width: 70%;
+}
+
+.address h4 {
+  font-size: 24px;
+  color: #FA815B;
+  font-weight: bold;
+}
+
+.address address {
+  color: #FFFFFF;
+}
+
+.important-links h4 {
+  font-size: 24px;
+  color: #FA815B;
+  font-weight: bold;
+}
+
+.important-links ul {
+  margin: 0;
+  padding: 0;
+}
+
+.important-links ul li {
+  list-style: none;
+  line-height: 36px;
+}
+
+.important-links ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.important-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.journey h4 {
+  font-size: 24px;
+  color: #FA815B;
+  font-weight: bold;
+}
+
+.journey .btn-danger {
+  color: #FFFFFF;
+  background-color: #FA815B;
+  border-color: #FA815B;
+}
+
+.journey .btn-danger:hover {
+  background-color: #cf4a22;
+  border-color: #cf4a22;
+}
+
+.copyright span {
+  font-size: 13.75px;
+}
+
+.mt-6 {
+  margin-top: 4rem !important;
+}
+
+.mt-7 {
+  margin-top: 5rem !important;
+}
+
+.mt-8 {
+  margin-top: 6rem !important;
+}
+
+.p-6 {
+  padding: 4rem !important;
+}
+
+.pt-6 {
+  padding-top: 4rem !important;
+}
+
+.pt-7 {
+  padding-top: 5rem !important;
+}
+
+.pt-8 {
+  padding-top: 6rem !important;
+}
+
+.pb-6 {
+  padding-bottom: 4rem !important;
+}
+
+.pb-7 {
+  padding-bottom: 5rem !important;
+}
+
+.pb-8 {
+  padding-bottom: 6rem !important;
+}
+
+@media only screen and (max-width: 576px) {
+  .testi-bg {
+    min-height: 500px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
