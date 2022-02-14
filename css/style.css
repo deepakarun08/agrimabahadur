@@ -189,6 +189,183 @@ body {
   border-color: #cf4a22;
 }
 
+.banner-heading {
+  font-size: 36px;
+  color: #FA815B;
+  font-weight: bold;
+}
+
+.banner-heading .banner-desc {
+  font-size: 18px;
+  color: #333333;
+}
+
+.sketch {
+  background: url("../images/sketch.png") no-repeat right center;
+  background-size: auto 90%;
+  border-top-right-radius: 12px;
+  background-color: #EE632A;
+}
+
+.sketch .step1 {
+  font-size: 200px;
+  font-weight: bold;
+  color: white;
+  opacity: .6;
+  line-height: 200px;
+  display: inline-block;
+}
+
+.sketch .step1name {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  opacity: .6;
+  display: inline-block;
+}
+
+.sneak {
+  background: url("../images/sneak.png") no-repeat right center;
+  background-size: auto 90%;
+  border-top-right-radius: 12px;
+  background-color: #B65C09;
+}
+
+.sneak .step2 {
+  font-size: 200px;
+  font-weight: bold;
+  color: white;
+  opacity: .6;
+  line-height: 200px;
+  display: inline-block;
+}
+
+.sneak .step2name {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  opacity: .6;
+  display: inline-block;
+}
+
+.knock {
+  background: url("../images/knock.png") no-repeat right center;
+  background-size: auto 100%;
+  border-top-right-radius: 12px;
+  background-color: #E69371;
+}
+
+.knock .step3 {
+  font-size: 200px;
+  font-weight: bold;
+  color: white;
+  opacity: .6;
+  line-height: 200px;
+  display: inline-block;
+}
+
+.knock .step3name {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  opacity: .6;
+  display: inline-block;
+}
+
+.bg-orange {
+  background-color: #FAB89D;
+}
+
+.form-head {
+  font-size: 28px;
+  font-weight: bold;
+  color: #FA815B;
+}
+
+.form-content {
+  font-size: 18px;
+  color: #333333;
+}
+
+.form-feild {
+  height: 50px;
+  display: inline;
+}
+
+.form-feild input[type="text"] {
+  height: 48px;
+  padding: 0 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #C2C2C2;
+  width: 400px;
+  outline-color: #FA815B;
+}
+
+.form-feild input[type="file"] {
+  height: 48px;
+  padding: 0 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.form-feild select {
+  height: 48px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #C2C2C2;
+  width: 400px;
+  padding: 0 20px;
+  outline-color: #FA815B;
+}
+
+.form-feild label {
+  clear: both;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.submitContainer .submit, .submitContainer .reset {
+  background-color: #FA815B;
+  color: white;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  margin-right: 16px;
+}
+
+.border-radius {
+  border-radius: 12px;
+}
+
+.dropdown-menu li {
+  padding: 16px 0;
+  border-bottom: 1px solid #C2C2C2;
+}
+
+.dropdown-menu li a:hover {
+  background-color: unset;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li:hover {
+  background-color: #FA815B;
+  color: white;
+}
+
+.dropdown-menu li:hover a {
+  color: white;
+}
+
 .copyright span {
   font-size: 13.75px;
 }
