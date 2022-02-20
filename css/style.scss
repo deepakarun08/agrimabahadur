@@ -13,8 +13,11 @@
 
 .social-media-header{
 	color:#FA815B;
-    &:hover{
+    &:hover, &:active{
         color: #333333;
+    }
+    &:visited{
+        color:#FA815B;
     }
 }
 
@@ -360,6 +363,7 @@
     }
 }
 
+.astric{color:  #FA815B;}
 
 
 .mt-6{

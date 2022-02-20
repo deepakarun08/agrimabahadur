@@ -15,8 +15,12 @@ body {
   color: #FA815B;
 }
 
-.social-media-header:hover {
+.social-media-header:hover, .social-media-header:active {
   color: #333333;
+}
+
+.social-media-header:visited {
+  color: #FA815B;
 }
 
 .social-media-footer {
@@ -381,6 +385,10 @@ body {
 
 .chart:hover {
   color: #000000;
+}
+
+.astric {
+  color: #FA815B;
 }
 
 .mt-6 {
