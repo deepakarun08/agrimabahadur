@@ -167,7 +167,25 @@
                     <div class="row mt-5">
                         <div class="col-6">
                             <div class="form-feild">
-                                <label for="size">What's your preferred size?*</label>
+                                <label for="size">What's your preferred size?* <a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#sizeChart" class="chart">Size Chart</a></label>
+                                <!-- Modal -->
+                                <div class="modal fade" id="sizeChart" tabindex="-1"
+                                    aria-labelledby="sizeChart" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Reference Size Chart</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src="../agrimabahadur/images/size-chart.png" class="w-100"/>
+                                                <p>Note: This is a standard size chart, there may be slight variation as per your body structure. For any customized size pleaase write us at orders@agrimabahadur.in</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <select id="size">
                                     <option>Select your Size</option>
                                     <option>XS</option>
@@ -220,6 +238,15 @@
 
                     </div>
 
+                    <div class="row mt-5">
+                        <div class="col-6">
+                            <div class="form-feild">
+                                <label for="name">Your e-mail*</label>
+                                <input placeholder="Enter your email" id="name" type="text" />
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-head mt-4">
                         Questions 4
                     </div>
@@ -232,7 +259,7 @@
                         <input type="submit" class="submit" value="Save & Submit">
                         <input type="reset" class="reset" value="Reset Form">
                     </div>
-                   
+
                 </div>
 
             </div>
@@ -294,7 +321,7 @@
                                         d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                                 </svg>
                             </div>
-                            <div class="col-10 col-sm-11"> ATS Dolce, Greater Noida,
+                            <div class="col-10 col-sm-11"> Zeta-1, Greater Noida,
                                 Uttar Pradesh, India.
                             </div>
                         </div>
@@ -324,7 +351,7 @@
                         <li><a href="design-studio.html">Design Studio</a></li>
                         <li><a href="faq.html">FAQs</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
-                      </ul>
+                    </ul>
                 </div>
                 <div class="col-lg-3 col-sm-12 journey">
                     <h4>Start your Journey</h4>

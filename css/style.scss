@@ -329,19 +329,20 @@
 
 .border-radius{border-radius: 12px;}
 
-.dropdown-menu{
-    
+.dropdown-menu{    
         li{
-        padding: 16px 0;
-        border-bottom: 1px solid #C2C2C2;
+        padding: 8px 0;
+        border-bottom: 1px solid #FFFFFF;
+        background-color: #FA815B;
+        a{color:#FFFFFF;}
         a:hover{background-color: unset;}
         &:last-child{
             border-bottom: none;
         }
         &:hover{
-            background-color: #FA815B;
-            color: white;
-            a{color: white;}
+            background-color: #FFFFFF;
+            color: #000000;
+            a{color: #000000;}
         }
 
         }
@@ -350,6 +351,13 @@
 
 .copyright{
     span{font-size: 13.75px;}
+}
+
+.chart{
+    color:  #FA815B;
+    &:hover{
+        color: #000000;
+    }
 }
 
 

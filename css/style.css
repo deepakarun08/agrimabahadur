@@ -345,8 +345,13 @@ body {
 }
 
 .dropdown-menu li {
-  padding: 16px 0;
-  border-bottom: 1px solid #C2C2C2;
+  padding: 8px 0;
+  border-bottom: 1px solid #FFFFFF;
+  background-color: #FA815B;
+}
+
+.dropdown-menu li a {
+  color: #FFFFFF;
 }
 
 .dropdown-menu li a:hover {
@@ -358,16 +363,24 @@ body {
 }
 
 .dropdown-menu li:hover {
-  background-color: #FA815B;
-  color: white;
+  background-color: #FFFFFF;
+  color: #000000;
 }
 
 .dropdown-menu li:hover a {
-  color: white;
+  color: #000000;
 }
 
 .copyright span {
   font-size: 13.75px;
+}
+
+.chart {
+  color: #FA815B;
+}
+
+.chart:hover {
+  color: #000000;
 }
 
 .mt-6 {
