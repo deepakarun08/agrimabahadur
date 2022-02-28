@@ -23,8 +23,11 @@
 
 .social-media-footer{
 	color:#FFFFFF;
-    &:hover{
+    &:hover, &:active{
         color: #FA815B;
+    }
+    &:visited{
+        color:#FFFFFF;
     }
 }
 
@@ -185,6 +188,27 @@
             border-color: #cf4a22;
         }
     }
+}
+
+.contactBtn{
+    .btn-danger{
+        color: #FFFFFF;
+        background-color: #FA815B;
+        border-color: #FA815B;
+        &:hover{
+            background-color: #cf4a22;
+            border-color: #cf4a22;
+        }
+    }
+}
+
+.questionDiv{
+    background-color: #ffd5ad;
+    border-bottom: 1px solid #FFFFFF;
+    cursor: pointer;
+}
+.answerDiv{
+    background-color: #ffe7d0;
 }
 
 .banner-heading{

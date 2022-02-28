@@ -27,8 +27,12 @@ body {
   color: #FFFFFF;
 }
 
-.social-media-footer:hover {
+.social-media-footer:hover, .social-media-footer:active {
   color: #FA815B;
+}
+
+.social-media-footer:visited {
+  color: #FFFFFF;
 }
 
 .section-head {
@@ -191,6 +195,27 @@ body {
 .journey .btn-danger:hover {
   background-color: #cf4a22;
   border-color: #cf4a22;
+}
+
+.contactBtn .btn-danger {
+  color: #FFFFFF;
+  background-color: #FA815B;
+  border-color: #FA815B;
+}
+
+.contactBtn .btn-danger:hover {
+  background-color: #cf4a22;
+  border-color: #cf4a22;
+}
+
+.questionDiv {
+  background-color: #ffd5ad;
+  border-bottom: 1px solid #FFFFFF;
+  cursor: pointer;
+}
+
+.answerDiv {
+  background-color: #ffe7d0;
 }
 
 .banner-heading {
