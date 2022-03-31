@@ -7,8 +7,18 @@
       font-family: nato sans;
   }
 
+
+.navbar-nav{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
 .nav-bg{
     background-color: #FA815B;
+}
+
+.icon-color{
+    color: #FA815B;
 }
 
 .social-media-header{
@@ -97,6 +107,7 @@
 
 .testi-bg{
     background: url("../images/testimonial.jpg") center bottom no-repeat;
+    min-height: 500px;
 }
 .testi-content{
     background-color: #FAB89D;
@@ -235,7 +246,7 @@
         display: inline-block;
     }
     .step1name{
-        font-size: 50px;
+        font-size: 36px;
         font-weight: bold;
         color: white;
         opacity: .6;
@@ -258,7 +269,7 @@
         display: inline-block;
     }
     .step2name{
-        font-size: 50px;
+        font-size: 36px;
         font-weight: bold;
         color: white;
         opacity: .6;
@@ -281,7 +292,7 @@
         display: inline-block;
     }
     .step3name{
-        font-size: 50px;
+        font-size: 36px;
         font-weight: bold;
         color: white;
         opacity: .6;
@@ -339,7 +350,69 @@
         display: block;
         margin-bottom: 10px;
     }
+
+    #ageError{
+        clear: left;
+        font-size: 12px;
+        color: red;
+        display: block;
+    }
 }
+
+.form-feild1{
+    height:50px;
+    display: inline;
+    input[type="text"]{
+        height: 48px;
+        padding: 0 16px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        border:1px solid #C2C2C2;
+        width: 90%;
+        outline-color: #FA815B;
+    }
+
+    input[type="file"]{
+        height: 48px;
+        padding: 0 16px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 90%;
+    }
+
+    select{
+        height: 48px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        border:1px solid #C2C2C2;
+        width: 90%;
+        padding: 0 20px;
+        outline-color: #FA815B;
+    }
+
+    textarea{
+        border:1px solid #C2C2C2;
+        padding: 10px 20px;
+        outline-color: #FA815B;
+        border-radius: 8px;
+        width: 90%;
+        height: 100px;
+    }
+
+    label{
+        clear: both;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #ageError{
+        clear: left;
+        font-size: 12px;
+        color: red;
+        display: block;
+    }
+}
+
 
 .submitContainer{
     .submit, .reset{
@@ -360,20 +433,49 @@
         li{
         padding: 8px 0;
         border-bottom: 1px solid #FFFFFF;
-        background-color: #FA815B;
-        a{color:#FFFFFF;}
+        a{color:#FA815B;}
         a:hover{background-color: unset;}
         &:last-child{
             border-bottom: none;
         }
         &:hover{
-            background-color: #FFFFFF;
-            color: #000000;
-            a{color: #000000;}
+            background-color: #FA815B;
+            color: #FFFFFF;
+            a{color: #FFFFFF;}
         }
 
         }
   
+}
+
+.faqRow{
+    .accordion-button:not(.collapsed) {
+       
+        color: #FA815B;
+        font-weight: bold;
+        background-color: #ffeae3;
+    }
+
+    .accordion-button:focus {
+        border-color: #FA815B !important;
+        box-shadow: 0 0 0 0.25rem #f5704850;
+    }
+}
+
+.occasionOther{
+    clear: both;
+    float: none;
+    display: block;
+    margin-top: 20px;
+}
+
+.colorOther{
+    display: block;
+    margin-top: 20px;
+}
+.quantityOther{
+    display: block;
+    margin-top: 20px;
 }
 
 .copyright{
@@ -431,7 +533,71 @@
 
 
 @media only screen and (max-width: 576px) {
+
+   
+
     .testi-bg{
-        min-height: 500px;
+        min-height: 350px;
+        background-size: 100%;
     }
+    .logo{max-height: 60px !important;}
+    .pt-8{
+        padding-top: 4rem !important;
+    }
+    .pb-8{
+        padding-bottom: 4rem !important;
+    }
+    .p-6{
+        padding: 1.5rem !important;
+    }
+    .banner-heading{
+        font-size: 28px;
+    }
+    .banner-desc{
+        margin-bottom: 48px;
+    }
+
+    .section-head{
+        font-size: 28px;
+    }
+
+    .designStudio{
+        .p-5{padding: 1rem !important;}
+        .form-head{
+            font-size: 20px;
+        }
+        .form-content{font-size: 16px;}
+        .form-feild{
+            select, input[type="text"], input[type="file"]{width: 100%;}
+            
+        }
+        .submitContainer{
+            .submit, .reset{font-size: 16px; padding: 12px;}
+        }
+    }
+
+    .contactBtn{
+        margin-bottom: 48px;
+    }
+    .faq-row{
+        .p-5{
+            padding: 1rem !important;
+        }
+    }
+
+    .contactContainer{
+        .p-5{
+            padding: 1rem !important;
+        }
+        .mt-5{
+            margin-top: 1rem !important;
+        }
+        .col-md-7{
+            margin-top: 48px;
+        }
+        .emailField{
+            margin-top: 1.5rem;
+        }
+    }
+    
 }
