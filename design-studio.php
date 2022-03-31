@@ -1,3 +1,125 @@
+<?php
+$servername = "localhost";
+$username = "agrimabahadur";
+$password = "agrimab@321";
+$dbname = "agrima";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}   
+	 $occasion = $_POST['occasion'];
+     $occasionOther = $_POST['occasionOther'];
+     $outfit = $_POST['outfit'];
+     $age = $_POST['age'];
+	 $height = $_POST['height'];
+     $size = $_POST['size'];
+     $color = $_POST['color'];
+     $colorOther = $_POST['colorOther'];
+     $quantity = $_POST['quantity'];
+     $quantityOther = $_POST['quantityOther'];
+     $name = $_POST['name'];
+	 $mobile = $_POST['mobile'];
+     $email = $_POST['email'];
+
+
+	 $target_dir = "uploads/";
+	 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+	 $uploadOk = 1;
+	 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+	 
+	 // Check if image file is a actual image or fake image
+	if(isset($_POST["submit"])) {
+	  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+	  if($check !== false) {
+		echo "File is an image - " . $check["mime"] . ".";
+		$uploadOk = 1;
+	  } else {
+		echo "File is not an image.";
+		$uploadOk = 0;
+	  }
+	}
+	
+	// Check if file already exists
+	if (file_exists($target_file)) {
+	  echo "Sorry, file already exists.";
+	  $uploadOk = 0;
+	}
+
+	// Check file size
+	if ($_FILES["fileToUpload"]["size"] > 2000000) {
+	  echo "Sorry, your file is too large.";
+	  $uploadOk = 0;
+	}
+	
+	// Allow certain file formats
+	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+	&& $imageFileType != "gif" ) {
+	  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+	  $uploadOk = 0;
+	}
+
+	// Check if $uploadOk is set to 0 by an error
+	if ($uploadOk == 0) {
+	  echo "Sorry, your file was not uploaded.";
+	// if everything is ok, try to upload file
+	} else {
+	  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+		echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+	  } else {
+		echo "Sorry, there was an error uploading your file.";
+	  }
+	}
+
+
+
+	 
+	 
+     $sql = "INSERT INTO design_studio (occasion, occasionOther, outfit, age, height, size, color, colorOther, quantity, quantityOther, name, mobile, email, picture)
+     VALUES ('$occasion', '$occasionOther', '$outfit', '$age', '$height', '$size', '$color', '$colorOther', '$quantity', '$quantityOther', '$name', '$mobile', '$email', '$target_file')";
+	 
+         $to = "info@agrimabahadur.com";
+         $cc = "abaek3@gmail.com";
+         $subject = "New Design Requirement";
+         
+         $message = "<strong>"."You have received a new message from the user $name."."</strong>"."<br>\n".
+                    "<strong>Occasion:</strong> $occasion"."<br>\n".
+                    "<strong>Other Occasion:</strong> $occasionOther"."<br>\n".
+					"<strong>Outfit:</strong> $outfit"."<br>\n".
+					"<strong>Age:</strong> $age"."<br>\n".
+					"<strong>Height:</strong> $height"."CM"."<br>\n".
+					"<strong>Size:</strong> $size"."<br>\n".
+					"<strong>Color:</strong> $color"."<br>\n".
+                    "<strong>Other Color:</strong> $colorOther"."<br>\n".
+                    "<strong>Quantity:</strong>  $quantity"."<br>\n".
+                    "<strong>Other Quantity:</strong>  $quantityOther"."<br>\n".
+					"<strong>Full Name:</strong> $name"."<br>\n".
+					"<strong>Mobile:</strong> $mobile"."<br>\n".
+					"<strong>Email:</strong> $email"."<br>\n".
+					"<strong>Picture:</strong>"."<a href='https://www.agrimabahadur.com/$target_file'>"."https://www.agrimabahadur.com/"."$target_file"."</a>";
+         
+         $header = "From:$email \r\n";
+         $header .= "Cc:$cc \r\n";
+         $header .= "MIME-Version: 1.0\r\n";
+         $header .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+         
+         $retval = mail ($to,$subject,$message,$header);
+         
+        //  if( $retval == true ) {
+        //     echo "Message sent successfully...";
+        //  }else {
+        //     echo "Message could not be sent...";
+        //  }
+		
+		
+		
+		
+?>
+
+
+
 <!DOCTYPE html>
 
 <head>
@@ -11,117 +133,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
-
-            $("#occasionOther").hide();
-            $("#colorOther").hide();
-            $("#quantityOther").hide();
-           
-            $("#occasion").on('change', function(){
-                var value = $(this).val();
-                if(value == "other"){
-                    $("#occasionOther").show();
-                }
-                else $("#occasionOther").hide();
-                
-            });
-
-            $("#color").on('change', function(){
-                var value = $(this).val();
-                if(value == "other"){
-                    $("#colorOther").show();
-                }
-                else $("#colorOther").hide();
-                
-            });
-
-            $("#quantity").on('change', function(){
-                var value = $(this).val();
-                if(value == "other"){
-                    $("#quantityOther").show();
-                }
-                else $("#quantityOther").hide();
-                
-            });
-                
-           
-
-                // if($("#occasion").prop('selectedIndex') == 0){
-                // alert("selected index is 6");
-                // }
-         
-           
-        });
-        function checkform() {
-            var age = document.getElementById('age').value;
-            var height = document.getElementById('height').value;
-            var outfit = document.getElementById('outfit').selectedIndex;
-            var occasion = document.getElementById('occasion').selectedIndex;
-            var size = document.getElementById('size').selectedIndex;
-            var color = document.getElementById('color').selectedIndex;
-            var quantity = document.getElementById('quantity').selectedIndex;
-            var FullName = document.getElementById('name').value;
-            var mobile = document.getElementById('mobile').value;
-            var mailformat = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            var emailid = document.getElementById('email').value;
-
-
-            if (occasion == 0) {
-                alert("Please select your Occasion");
-                document.designStudio.occasion.focus();
-                return false;
-            }
-            if (outfit == 0) {
-                alert("Please select your outfit type");
-                document.designStudio.outfit.focus();
-                return false;
-            }
-            if ((isNaN(age)) || (age == "")) {
-                alert("Please enter age in years");
-                document.designStudio.age.focus();
-                return false;
-            }
-            if ((isNaN(height)) || (height == "")) {
-                alert("Please enter Height in centimetre");
-                document.designStudio.height.focus();
-                return false;
-            }
-            if (size == 0) {
-                alert("Please select your Size");
-                document.designStudio.size.focus();
-                return false;
-            }
-            if (color == 0) {
-                alert("Please select your Color Preference");
-                document.designStudio.color.focus();
-                return false;
-            }
-            if (quantity == 0) {
-                alert("Please select a Number");
-                document.designStudio.quantity.focus();
-                return false;
-            }
-            if ((!isNaN(FullName)) || (FullName == "")) {
-                alert("Please enter your full Name");
-                document.designStudio.name.focus();
-                return false;
-            }
-            if ((isNaN(mobile)) || (mobile == "")) {
-                alert("Please enter 10 Digit Mobile Number");
-                document.designStudio.mobile.focus();
-                return false;
-            }
-            if (emailid.match(mailformat)) {
-                return true;
-            }
-            else {
-                document.designStudio.email.focus();
-                alert("Please enter valid email!");
-                return false;
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -183,7 +194,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item me-4"><a class="nav-link" aria-current="page" href="index.html">Home</a></li>
-
+                   
                     <li class="nav-item dropdown me-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -204,216 +215,25 @@
         </div>
     </nav>
 
-    <div class="container-fluid pt-5 pb-5">
-        <div class="container-md">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="banner-heading">
-                        Design Studio
-                    </div>
-                    <div class="banner-desc">Your inspiration + Our expertise = Perfect fitted outfit to go well with
-                        your heart and make those heads turn each and every time!</div>
-                </div>
-                <div class="col-md-6">
-                    <img src="images/design-studio-banner.png" class="w-100" />
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     <div class="container-fluid pt-8 pb-8 bg-light">
         <div class="container-md text-center">
 
-            <h6 class="text-uppercase text-muted">How do we work</h6>
-            <div class="mt-4 section-head col-md-6 me-auto ms-auto mb-5">Answer some simple questions and Design your very
-                own Dream Outfit !</div>
-            <div class="row text-start bg-white shadow border-radius">
-                <form name="designStudio" class="designStudio" action="design-studio.php" onsubmit="return checkform()" method="post"
-                    enctype="multipart/form-data">
-                    <div class="col-12 p-5">
-                        <div class="form-head">
-                            Questions 1
-                        </div>
-                        <div class="form-content mb-4">What's the Occasion?<span class="astric">*</span></div>
-                        <div class="form-feild">
-                            <select id="occasion" name="occasion">
-                                <option>Select your occasion type</option>
-                                <option>Wedding</option>
-                                <option>Birthday party or get together</option>
-                                <option>Engagement or Reception</option>
-                                <option>Festival or Small Event</option>
-                                <option>Cocktail</option>
-                                <option value="other">Other</option>
-                            </select>
 
-                            <input type="text" id="occasionOther" name="occasionOther" placeholder="Enter Occasion Name" class="occasionOther">
-                        </div>
-                        <div class="form-head mt-4">
-                            Questions 2
-                        </div>
-                        <div class="form-content mb-4">What type of outfit you need?<span class="astric">*</span></div>
-                        <div class="form-feild">
-                            <select id="outfit" name="outfit">
-                                <option>Select your outfit</option>
-                                <option>Blouse or top</option>
-                                <option>Dress</option>
-                                <option>Gown</option>
-                                <option>Saree</option>
-                                <option>Lehenga</option>
-                                <option>Suit or Anarkali</option>
-                                <option>Not decided?</option>
-                            </select>
-                        </div>
-                        <div class="form-head mt-4">
-                            Questions 3
-                        </div>
-                        <div class="form-content mb-4">Tell us more about yourself</div>
-                        <div class="row">
-                            <div class="col-lg-6 mb-5">
-                                <div class="form-feild">
-                                    <label for="age">What's your age?<span class="astric">*</span></label>
-                                    <input placeholder="Enter your age in years" id="age" name="age" type="text" />
-                                    <span id="ageError"></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-5">
-                                <div class="form-feild">
-                                    <label for="height">What's your height?<span class="astric">*</span></label>
-                                    <input placeholder="Enter your height in CM" id="height" name="height"
-                                        type="text" />
-                                </div>
-                            </div>
+            <div class="row text-center bg-white shadow border-radius p-5">
+			
+				<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                <?php
+					if ($conn->query($sql) === TRUE) {
+					echo "<h3 class='m-4'>"."Thank you for Submitting your query. We will get back to you very soon."."</h3>";
+					} else {
+					echo "Error: " . $sql . "<br>" . $conn->error;
+					}
 
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6 mb-5">
-                                <div class="form-feild">
-                                    <label for="size">What's your preferred size?<span class="astric">*</span> <a
-                                            href="#" data-bs-toggle="modal" data-bs-target="#sizeChart"
-                                            class="chart">Size Chart</a></label>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="sizeChart" tabindex="-1" aria-labelledby="sizeChart"
-                                        aria-hidden="true">
-                                        <div
-                                            class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Reference Size Chart
-                                                    </h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <img src="../images/size-chart.png" class="w-100" />
-                                                    <p>Note: This is a standard size chart, there may be slight
-                                                        variation as per your body structure. For any customized size
-                                                        pleaase write us at orders@agrimabahadur.in</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <select id="size" name="size">
-                                        <option>Select your Size</option>
-                                        <option>XS</option>
-                                        <option>S</option>
-                                        <option>M</option>
-                                        <option>L</option>
-                                        <option>XL</option>
-                                        <option>XXL</option>
-                                        <option>XXXL</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-5">
-                                <div class="form-feild">
-                                    <label for="color">What's your color preference?<span
-                                            class="astric">*</span></label>
-                                    <select id="color" name="color">
-                                        <option>Select your color</option>
-                                        <option>White</option>
-                                        <option>Black</option>
-                                        <option>Yellow</option>
-                                        <option>Red</option>
-                                        <option>Pink</option>
-                                        <option>Orange</option>
-                                        <option>Blue</option>
-                                        <option>Green</option>
-                                        <option>Brown</option>
-                                        <option>Purple</option>
-                                        <option>Grey</option>
-                                        <option>Peach</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                    <input type="text" id="colorOther" name="colorOther" class="colorOther" placeholder="Enter Color Name">
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6 mb-5">
-                                <div class="form-feild">
-                                    <label for="quantity">Number of pieces<span class="astric">*</span></label>
-                                    <select id="quantity" name="quantity">
-                                        <option>Select Numbers</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                    <input placeholder="Please enter number of pieces required" id="quantityOther" class="quantityOther" name="quantityOther" type="text"/>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-5">
-                                <div class="form-feild">
-                                    <label for="name">Your Full Name<span class="astric">*</span></label>
-                                    <input placeholder="Enter your name" id="name" name="name" type="text" />
-                                </div>
-                            </div>
-                           
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6 mb-5">
-                                <div class="form-feild">
-                                    <label for="mobile">Your Mobile Number<span class="astric">*</span></label>
-                                    <input placeholder="Enter your 10 digit mobile number" id="mobile" name="mobile"
-                                        type="text" maxlength="10" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-5">
-                                <div class="form-feild">
-                                    <label for="email">Your e-mail<span class="astric">*</span></label>
-                                    <input placeholder="Enter your email" id="email" name="email" type="text" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-head mt-4">
-                            Questions 4
-                        </div>
-                        <div class="form-content mb-4">If you are inspired with any design reference, please share.
-                            (optional)</div>
-                        <div class="form-feild">
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                        </div>
-                        <div class="submitContainer mt-5">
-                            <input type="submit" id="Studio" value="Save & Submit" class="submit">
-                            <input type="reset" class="reset" value="Reset Form">
-                        </div>
-
-                    </div>
-                </form>
+					$conn->close();
+				?>                   
             </div>
 
         </div>
@@ -531,16 +351,9 @@
     </div>
     <!--End Start of footer container-->
     <div class="container-fluid bg-light copyright text-center m-0 p-3">
-        <span>Copyright 2022 by AEK Exports. All Rights Reserved.</span>
+         <span>Copyright 2022 by AEK Exports. All Rights Reserved.</span>
     </div>
-
-    <script>
-        //document.getElementById('Studio').addEventListener('click', function(e) {
-          //  e.preventDefault();
-            //return false;
-        //});
-    </script>
-
 </body>
 
 </html>
+

@@ -1,8 +1,52 @@
+<?php
+$servername = "localhost";
+$username = "agrimabahadur";
+$password = "agrimab@321";
+$dbname = "agrima";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}   
+	
+     $name = $_POST['name'];
+     $email = $_POST['email'];
+     $mobile = $_POST['mobile'];
+     $querySubject = $_POST['subject']; 
+     $query = $_POST['query']; 
+     $sql = "INSERT INTO contact (name, email, mobile, subject, query)
+     VALUES ('$name','$email','$mobile','$querySubject','$query')";
+	 
+		 $to = "info@agrimabahadur.com";
+         $cc = "abaek3@gmail.com";
+         $subject = $querySubject;
+         
+         $message = "You have contact query from $name.\r\n"." His Mobile is: $mobile"."<br>\n".
+					"Query: $query"."\r\n";
+         
+         $header = "From:$email \r\n";
+         $header .= "Cc:$cc \r\n";
+         $header .= "MIME-Version: 1.0\r\n";
+         $header .= "Content-type: text/html\r\n";
+         
+         $retval = mail ($to,$subject,$message,$header);
+         
+        //  if( $retval == true ) {
+        //     echo "Message sent successfully...";
+        //  }else {
+        //     echo "Message could not be sent...";
+        //  }
+		
+?>
+
+
+
 <!DOCTYPE html>
 
 <head>
-    <title>Agrima Bahadur: FAQ</title>
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrima Bahadur: Contact us</title>
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -12,23 +56,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
-    <script>
-
-        $(document).ready(function () {
-            $('.answerDiv').hide();
-            $('.questionDiv').click(function () {
-                $question = $(this);
-                $answer = $question.next();
-                $height = $answer.height();
-                $answer.css('box-sizing', 'border-box');
-                $answer.slideToggle(1000, function () {
-
-                });
-            });
-        });
-
-    </script>
 </head>
 
 <body>
@@ -39,7 +66,7 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="index.html"
                         class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                        <img src="images/logo.png" height="80" style="outline: none;"  class="logo"/>
+                        <img src="images/logo.png" height="80" style="outline: none;" class="logo" />
                     </a>
                     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                         <li>
@@ -90,7 +117,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item me-4"><a class="nav-link" aria-current="page" href="index.html">Home</a></li>
-
+                   
                     <li class="nav-item dropdown me-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -104,229 +131,32 @@
                     <li class="nav-item me-4"><a class="nav-link" href="design-studio.html">Design Studio</a>
                     </li>
                     <li class="nav-item me-4"><a class="nav-link" href="story.html">Our Story</a></li>
-                    <li class="nav-item me-4"><a class="nav-link active" href="faq.html">FAQs</a></li>
-                    <li class="nav-item me-4"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item me-4"><a class="nav-link" href="faq.html">FAQs</a></li>
+                    <li class="nav-item me-4"><a class="nav-link active" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid pt-5 pb-5">
-        <div class="container-md">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="banner-heading">
-                        FAQ's
-                    </div>
-                    <div class="banner-desc">Below are some frequently asked questions by our random clients. If you
-                        have any other question, please feel free to reach out to use.</div>
-                    <div class="contactBtn mt-4">
-                        <button type="button" class="btn btn-danger btn-lg"
-                            onclick="window.location.href='contact.html'">Contact us</button>
-                    </div>
-                </div>
-                <div class="col-md-6 text-end">
-                    <img src="images/faq-banner.png" class="float-right w-100" />
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     <div class="container-fluid pt-8 pb-8 bg-light">
         <div class="container-md text-center">
 
-            <h6 class="text-uppercase text-muted">Q&A Session</h6>
-            <div class="mt-4 section-head col-md-6 me-auto ms-auto mb-5">Frequently asked questions</div>
-            <div class="row faq-row text-start bg-white shadow border-radius">
-                <div class="col-12 p-5">
 
+            <div class="row text-center bg-white shadow border-radius p-5">
+			
+				<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                <?php
+					if ($conn->query($sql) === TRUE) {
+					echo "<h3 class='m-4'>"."Thank you for Contacting us. We will get back to you soon."."</h3>";
+					} else {
+					echo "Error: " . $sql . "<br>" . $conn->error;
+					}
 
-                    <div class="row faqRow">
-                        <div class="accordion" id="accordionFaq">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        #1: Do you have any legal registrations or licenses for your export house?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
-                                    <div class="accordion-body">
-                                        This has been an Integral and Top Priority Area of Concern for us  We have all the required licenses, registrations such as Company Registration, IEC Code, as well as GST Registration.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        #2: Is AGRIMA BAHADUR an Indian company?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFaq">
-                                    <div class="accordion-body">
-                                        Yes, Agrima bahadur is an Indian sale proprietorship producer to exporters offering a
-                                        full-size and awesome range of clothes to almost every part of the world which contains
-                                        designer customized wear outfits and export garments. We are registered with various trade
-                                        organizations and have a legitimate import-export license for exporting goods
-                                        internationally.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        #3: What is your minimum order quantity?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                        <p>We work with a minimum of as low as 10 per size, style, and color. We are proud to
-                                            provide some of the lowest minimum order quantities in the industry and provide the best
-                                            designer advice with designs if needed.</p>
-                                        <p>You can pick your favoured quantity always; we would be most glad and happy to grant you
-                                            great services for each single or massive quantity with the best quality you order.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour">
-                                        #4: We want to reproduce a garment with my own specification and sizes. Can you make a garment?
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                        Yes positively, send us across the samples with the adjustments you choose in it, or you can send us the picture, or any inspiration image we can make the best out of your imagination.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFive">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFive" aria-expanded="false"
-                                        aria-controls="collapseFive">
-                                        #5: Why do you think your company is successful?
-                                    </button>
-                                </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse"
-                                aria-labelledby="headingFive" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                        We are very flexible to the needs of clients. We have been working hard in the clothing line to get high-quality results. We have good sourcing functionality and an understanding of the quality that the consumer needs.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSix" aria-expanded="false"
-                                        aria-controls="collapseSix">
-                                        #6: Do you provide designer custom wear outfits and own labelling?
-                                    </button>
-                                </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse"
-                                aria-labelledby="headingSix" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                        Yes, we provide garments with our own label Agrima Bahadur. We are the most prestigious title in full-service apparel manufacturing from India that provides a to z solution beginning from concept to production as well as transport and dispatch throughout the globe. We work based totally on your personal custom-made design and specification you provide to us which helps to yield 100% matching your requirement.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSeven">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSeven" aria-expanded="false"
-                                        aria-controls="collapseSeven">
-                                        #7: Can you send us your catalogue?
-                                    </button>
-                                </h2>
-                                <div id="collapseSeven" class="accordion-collapse collapse"
-                                aria-labelledby="headingSeven" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                        We will send our company profile. We will additionally brief you about the kind of work we do through a small catalogue to provide a clear understanding. But we won’t be able to share the designs of our designer.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingEight">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseEight" aria-expanded="false"
-                                        aria-controls="collapseEight">
-                                        #8: I want a full designer outfit for my friend's wedding. Do you provide the one which I want as per my imagination?
-                                    </button>
-                                </h2>
-                                <div id="collapseEight" class="accordion-collapse collapse"
-                                aria-labelledby="headingEight" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                        Yes, we do provide custom wear designer outfits for that you have to visit our design studio section on our site.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingNine">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseNine" aria-expanded="false"
-                                        aria-controls="collapseNine">
-                                        #9: Can you give me the price quote by email?
-                                    </button>
-                                </h2>
-                                <div id="collapseNine" class="accordion-collapse collapse"
-                                aria-labelledby="headingNine" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                        <p>No, we can only give a price quote as soon as we have your pattern, tech pack, and fabric in hand and create a production sample for you.</p>
-
-                                        <p>We can never grant a fee quote by phone or email at the time of bulk production. If you do not have a pattern we can provide and create a pattern for you, however, we might not be able to provide a price quote on your garment till your pattern and production sample is finalized. But we can grant you the estimate.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTen">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTen" aria-expanded="false"
-                                        aria-controls="collapseTen">
-                                        #10: What is your lead time?
-                                    </button>
-                                </h2>
-                                <div id="collapseTen" class="accordion-collapse collapse"
-                                    aria-labelledby="headingTen" data-bs-parent="#accordionFaq">
-                                    <div class="accordion-body">
-                                        <p>Our lead time relies upon a lot of factors: The season, different manufacturing orders in the schedule, what machines your garments require, etc.</p>
-
-                                        <p>as soon as we acquire your deposit, we will work to put you on the schedule and let you know the estimated completion date.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingEleven">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseEleven" aria-expanded="false"
-                                        aria-controls="collapseEleven">
-                                        #11: How can I work with you?
-                                    </button>
-                                </h2>
-                                <div id="collapseEleven" class="accordion-collapse collapse"
-                                    aria-labelledby="headingEleven" data-bs-parent="#accordionFaq">
-                                    <div class="accordion-body">
-                                        <p>We are in touch with most of the clients via emails, phone, skype, and WhatsApp. We send detailed photos of your designs and sketches as soon as they are completed via email.</p>
-
-                                        <p>For the samples, we use international courier express directly to you in 3 days</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+					$conn->close();
+				?>                   
             </div>
 
         </div>
@@ -446,7 +276,7 @@
     <div class="container-fluid bg-light copyright text-center m-0 p-3">
         <span>Copyright 2022 by AEK Exports. All Rights Reserved.</span>
     </div>
-
 </body>
 
 </html>
+
